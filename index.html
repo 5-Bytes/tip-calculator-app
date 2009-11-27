@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="Stylesheet" href="styles/main.css"/>
+  <title>Frontend Mentor | Tip calculator app</title>
+</head>
+<body>
+	<header class="logo">
+		<img src='./images/logo.svg'/>
+	</header>
+	<main class="container">
+		<section class="form-container">
+			<form class="form">
+				<fieldset class="form__fieldset">
+					<legend class="form__legend "><span>Bill<span></legend>
+					<div id="div-bill" class="form__box">
+						<img src="./images/icon-dollar.svg"/>
+						<input type="number" id="bill">
+					</div>
+				</fieldset>
+				<p class="header-btn">Select Tip %</p>
+				<div id ="btn-porcentajes" class="buttons">
+					<button data-tip="0.5">5%</button>
+					<button data-tip="0.10">10%</button>
+					<button data-tip="0.15">15%</button>
+					<button data-tip="0.25">25%</button>
+					<button data-tip="0.50">50%</button>
+					<input id="btn-custom-tip"  class="custom-tip" type="Number" placeholder="Custom"/>
+				</div>
+				<fieldset class="form__fieldset">
+					<legend class="form__legend"><span>Number of people</span></legend>
+					<div id="div-number-of-people" class="form__box">
+						<img src="./images/icon-person.svg"/>
+						<input type="number" id="number-of-people">
+					</div>
+				</fieldset>
+			</form>
+		</section>
+		<section class="totals-container">
+			<div class="totals">
+				<p>Tip Amount <span>/person</span></p>
+				<output id="tip-amount" class="output">$0.00</output>
+			</div>	
+			<div class="totals">
+				<p>Total  <span>/person</span></p>
+				<output id="total" class="output">$0.00</output>
+			</div>
+			<button id="reset" class="reset-btn">RESET</button>
+		</section>
+	</main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Simón Martínez</a>.
+  </div>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
