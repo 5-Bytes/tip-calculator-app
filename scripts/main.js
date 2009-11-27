@@ -113,10 +113,6 @@ let oTipAmount = new OutputTipAmount(outputTipAmount);
 notificacionDeCuenta.subscribe(oTotal);
 notificacionDeCuenta.subscribe(oTipAmount);
 
-//INPUT
-const INPUT_INVALID_COLOR = 'rgb(204,120,96)';
-const INPUT_FOCUS_COLOR = 'hsl(172,67,45)';
-
 function removerClassName(element,className){
 	element.classList.remove(className);
 }
@@ -148,13 +144,15 @@ inputBill.addEventListener('keyup',(e) => {
 		notificacionDeCuenta.change(calcularCuenta.cuentaActual())
 	}
 	
-	if(parseFloat(e.target.value) < 0){
+	if(parseFloat(e.target.value) < 1){
 		formLegends[0].classList.add('form__legend--invalid');
-		formBoxes[0].style.borderColor=INPUT_INVALID_COLOR;
+		formBoxes[0].classList.add('form__box--invalid');
+		formBoxes[0].classList.remove('form__box--focus');
 	}else{
 		formLegends[0].classList.remove('form__legend--invalid');
-		formBoxes[0].style.borderColor = INPUT_FOCUS_COLOR;
-	}	
+		formBoxes[0].classList.remove('form__box--invalid');
+		formBoxes[0].classList.add('form__box--focus');
+	}
 });
 	
 inputNumberOfPeople.addEventListener('keyup',(e) => {
@@ -165,10 +163,12 @@ inputNumberOfPeople.addEventListener('keyup',(e) => {
 	
 	if(parseFloat(e.target.value) < 1){
 		formLegends[1].classList.add('form__legend--invalid');
-		formBoxes[1].style.borderColor=INPUT_INVALID_COLOR;
+		formBoxes[1].classList.add('form__box--invalid');
+		formBoxes[1].classList.remove('form__box--focus');
 	}else{
 		formLegends[1].classList.remove('form__legend--invalid');
-		formBoxes[1].style.borderColor=INPUT_FOCUS_COLOR;
+		formBoxes[1].classList.remove('form__box--invalid');
+		formBoxes[1].classList.add('form__box--focus');
 	}
 });
 
@@ -190,4 +190,3 @@ resetBtn.onclick = function () {
 	notificacionDeCuenta.change({total:0,tipAmount:0})
 	document.querySelector('form').reset();
 }
-//=>  CONSIDERAR QUE EL USUARIO PUEDE DAR COMO ENTRADA UN NUMERO CON O SIN %
