@@ -1,5 +1,4 @@
 # Frontend Mentor - Tip calculator app
 
-#Practice project
-
-#Open index.html
+## Installation
+Open index.html
